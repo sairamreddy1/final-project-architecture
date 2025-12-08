@@ -60,7 +60,7 @@ export default function AzureFiles() {
 
   useEffect(() => {
     loadBlobs();
-  }, []);
+  }, [loadBlobs]);
 
 return (
   <section style={{ marginTop: "40px", textAlign: "center" }}>
