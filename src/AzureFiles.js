@@ -60,7 +60,8 @@ export default function AzureFiles() {
 
   useEffect(() => {
     loadBlobs();
-  }, [loadBlobs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 return (
   <section style={{ marginTop: "40px", textAlign: "center" }}>
