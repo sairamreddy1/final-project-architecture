@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import { auth, signInWithGoogle, logout, db } from "./firebase";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
+import AzureFiles from "./AzureFiles";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -117,6 +118,8 @@ function App() {
           </div>
 
           <hr style={{ marginTop: "30px" }} />
+
+          <AzureFiles />
 
           {/* PANEL BUTTONS */}
           <button onClick={() => setActivePanel("me")}>Your Login Information</button>
