@@ -85,7 +85,7 @@ function App() {
     <main>
       {!user ? (
         <>
-          <h1>Dogs App — Login Required</h1>
+          <h1>Final Project Architecture</h1>
           <button onClick={signInWithGoogle}>Login with Google</button>
         </>
       ) : (
