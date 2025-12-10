@@ -65,7 +65,7 @@ export default function AzureFiles() {
 
 return (
   <section style={{ marginTop: "40px", textAlign: "center" }}>
-    <h2>Azure Blob Storage — File Upload</h2>
+    <h2>File Upload</h2>
 
     <div style={{ marginTop: "15px" }}>
       <input type="file" onChange={(e) => setFile(e.target.files[0])} />

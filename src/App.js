@@ -3,6 +3,8 @@ import "./App.css";
 import { auth, signInWithGoogle, logout, db } from "./firebase";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import AzureFiles from "./AzureFiles";
+import Footer from "./Footer";
+import Header from "./Header";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -88,11 +90,10 @@ function App() {
         </>
       ) : (
         <>
-          <h2>Welcome, {user.displayName}</h2>
-          <button onClick={logout}>Logout</button>
+          <Header userName={user.displayName} onLogout={logout} />
 
           {/* DOG SECTION */}
-          <h1 style={{ marginTop: "20px" }}>Dogs — Fetch, Promises & Async/Await</h1>
+          <h1 style={{ marginTop: "20px" }}>Final Project Architecture</h1>
 
           <label htmlFor="breed">Choose breed:</label>
           <select id="breed" onChange={(e) => fetchImagesForBreed(e.target.value)}>
@@ -117,10 +118,10 @@ function App() {
             </div>
           </div>
 
-          <hr style={{ marginTop: "30px" }} />
+          
 
           <AzureFiles />
-
+          
           {/* PANEL BUTTONS */}
           <button onClick={() => setActivePanel("me")}>Your Login Information</button>
           <button onClick={() => setActivePanel("all")}>All Users Login History</button>
@@ -134,7 +135,7 @@ function App() {
               <p><strong>Total Logins:</strong> {userData.logins}</p>
             </div>
           )}
-
+          
           {/* ALL USERS PANEL */}
           {activePanel === "all" && (
             <div style={{ marginTop: "20px" }}>
@@ -159,8 +160,9 @@ function App() {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </div>  
           )}
+          <Footer />
         </>
       )}
     </main>
